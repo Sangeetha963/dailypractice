@@ -1,10 +1,30 @@
-// const prompts = require('prompts');
+import { question, questionInt } from "readline-sync";
 
-// (async ()=> {
-//     const response = await prompts({
-//         type: 'text',
-//         value: 'meaning',
-//         message: 'what is the meaning of life?'
-//     });
-//     console.log(response.meaning);
-// })();
+// import readline = require('readline-sync');
+let result;
+// take the operator input
+const operator = question('Enter operator ( either +, -, * or / ): ');
+// take the operand input
+const number1 = questionInt('Enter first number: ');
+const number2 = questionInt('Enter second number: ');
+switch(operator) {
+    case '+':
+         result = number1 + number2;
+        console.log(`${number1} + ${number2} = ${result}`);
+        break;
+    case '-':
+         result = number1 - number2;
+        console.log(`${number1} - ${number2} = ${result}`);
+        break;
+    case '*':
+         result = number1 * number2;
+        console.log(`${number1} * ${number2} = ${result}`);
+        break;
+    case '/':
+         result = number1 / number2;
+        console.log(`${number1} / ${number2} = ${result}`);
+        break;
+    default:
+        console.log('Invalid operator');
+        break;
+}
